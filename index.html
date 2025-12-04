@@ -1,33 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cocteles Web</title>
-    <link href="https://www.thecocktaildb.com/api/json/v1/1/" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <title>CocktailDB - Buscador de Cócteles</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- HEADER con menú hamburguesa manual -->
     <header>
-        <div class="container mt-4">Cocteles Web</div>
-            <p>Bienvenido a la pagína de los cocteles</p>
-            <select name="" id=""></select>
+        <div class="container">
+            <div class="header-content">
+                <h1>🍹 CocktailDB</h1>
+                
+                <!-- Botón hamburguesa (solo CSS y JS, sin Bootstrap) -->
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Menú de navegación -->
+                <nav class="nav-menu" id="navMenu">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#buscar">Buscar</a>
+                    <a href="#favoritos">Favoritos</a>
+                    <a href="#acerca">Acerca de</a>
+                </nav>
+            </div>
+        </div>
     </header>
 
-    <select name="select" id="select_cont" class="form-select mb-3">
-        <option value="europe">Europa</option>
-        <option value="africa">Africa</option>
-        <option value="americas">America</option>
-        <option value="asia">Asia</option>
-        <option value="oceania">Oceania</option>
-    </select>
+    <!-- MAIN -->
+    <main>
+        <div class="container">
+            <!-- Sección de búsqueda -->
+            <section class="search-section">
+                <h2>Busca tu cóctel favorito</h2>
+                
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Escribe el nombre del cóctel..."
+                        class="search-input"
+                    >
+                    <button id="searchBtn" class="btn-search">Buscar</button>
+                </div>
 
-    <button id="loadBtn" class="btn btn-primary w-100 mb-4">Obtener Paises</button>
-    <div id="alerts" class="row"></div>
+                <button id="randomBtn" class="btn-random">🎲 Cóctel Aleatorio</button>
 
-  </div>
-    
-    
+                <!-- Alerta Bootstrap para errores -->
+                <div id="alertContainer"></div>
+            </section>
+
+            <!-- Sección de resultados -->
+            <section id="resultsSection" class="results-section">
+                <div id="cocktailsContainer" class="cocktails-grid"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- MODAL para detalles (HTML puro, no Bootstrap) -->
+    <div id="cocktailModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CocktailDB - Proyecto Desarrollo Web</p>
+            <p class="footer-subtitle">IES El Majuelo - Ciclo Superior DAM</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/proyecto.js"></script>
 </body>
 </html>
