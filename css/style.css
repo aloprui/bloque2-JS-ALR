@@ -1,14 +1,11 @@
-/* RESET */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-/* GENERAL */
+/* ESTILO GENERAL */
 body {
     font-family: Arial, sans-serif;
-    background: #6a5acd;
-    color: #333;
-    min-height: 100vh;
+    background: #f7fff7;
+    color: #1a2e1a;
 }
 
+/* CONTENEDOR */
 .container {
     max-width: 1100px;
     margin: auto;
@@ -17,11 +14,11 @@ body {
 
 /* HEADER */
 header {
-    background: #2d3748;
+    background: #0d8a0d;
     padding: 15px;
+    color: white;
     position: sticky;
     top: 0;
-    color: white;
 }
 
 .header-content {
@@ -30,36 +27,77 @@ header {
     align-items: center;
 }
 
+/* BOTÓN TEMA */
+.theme-toggle {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* MENÚ */
+.nav-menu {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HAMBURGUESA */
 .hamburger {
     display: none;
-    flex-direction: column;
     background: none;
     border: none;
     cursor: pointer;
 }
 
 .hamburger span {
+    display: block;
     width: 25px;
     height: 3px;
-    margin: 4px 0;
     background: white;
+    margin: 4px 0;
 }
 
-/* NAV */
-.nav-menu {
+/* MAIN */
+main {
+    padding: 20px 0;
+}
+
+/* BLOQUE DE INFORMACIÓN */
+.info-box {
+    background: #e7f8e7;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
     display: flex;
-    gap: 1rem;
+    gap: 20px;
 }
 
-.nav-menu a {
-    color: white;
-    text-decoration: none;
+.info-box img {
+    width: 200px;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
 }
 
-/* SEARCH */
-main { padding: 2rem 0; }
+.info-content h3 {
+    color: #0d8a0d;
+    margin-bottom: 10px;
+}
 
-.search-section { text-align: center; margin-bottom: 1.5rem; }
+/* BUSCADOR */
+.search-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
 .search-container {
     display: flex;
@@ -71,49 +109,72 @@ main { padding: 2rem 0; }
 .search-input {
     flex: 1;
     padding: 10px;
+    border: 2px solid #0d8a0d;
+    border-radius: 6px;
 }
 
 .btn-search,
 .btn-random {
-    padding: 10px;
+    padding: 10px 20px;
     border: none;
+    border-radius: 6px;
     color: white;
     cursor: pointer;
 }
 
-.btn-search { background: #10b981; }
-.btn-random { background: #f59e0b; }
+.btn-search {
+    background: #0d8a0d;
+}
 
-#alertContainer { margin-top: 10px; }
+.btn-random {
+    background: #ffb100;
+}
 
-/* CARDS */
+/* GRID DE TARJETAS */
 .cocktails-grid {
     display: grid;
-    gap: 1rem;
+    gap: 15px;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
+/* TARJETA DE COCKTAIL */
 .cocktail-card {
     background: white;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+    border: 2px solid #0d8a0d;
+    border-radius: 10px;
+    overflow: hidden; /* hace que la imagen siga los bordes redondeados */
 }
 
 .cocktail-card img {
     width: 100%;
     height: 180px;
     object-fit: cover;
+    display: block;
 }
 
-.card-body { padding: 1rem; }
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    color: #0d8a0d;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    margin-bottom: 12px;
+}
 
 .btn-view-more {
     width: 100%;
-    padding: 8px;
-    border: none;
-    background: #667eea;
+    padding: 10px;
+    background: #0d8a0d;
     color: white;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 1rem;
 }
 
 /* MODAL */
@@ -121,86 +182,91 @@ main { padding: 2rem 0; }
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.5);
     justify-content: center;
     align-items: center;
 }
 
-.modal.active { display: flex; }
+.modal.active {
+    display: flex;
+}
 
 .modal-content {
     background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
     width: 90%;
-    max-width: 600px;
-    padding: 1rem;
-    border-radius: 6px;
     position: relative;
 }
 
 .modal-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    border: none;
+    font-size: 20px;
     background: none;
-    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 
 .modal-image {
     width: 100%;
-    height: 250px;
+    max-height: 250px;
     object-fit: cover;
-    margin-bottom: 1rem;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 15px;
 }
 
-.ingredients-list { list-style: none; padding: 0; }
+/* LISTA DE INGREDIENTES */
+.ingredients-list {
+    list-style: none;
+    margin-top: 10px;
+}
 
 .ingredients-list li {
-    background: #eee;
+    background: #e7f8e7;
+    padding: 8px;
+    border-radius: 4px;
     margin-bottom: 5px;
-    padding: 6px;
 }
 
 /* FOOTER */
 footer {
-    background: #1a202c;
+    background: #0d8a0d;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 15px;
+    margin-top: 20px;
 }
-/*Aparece el Footer Abajo.*/
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
-}
-
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    .hamburger { display: flex; }
+    .hamburger {display: block;}
 
     .nav-menu {
         position: fixed;
-        top: 0;
         right: -100%;
-        width: 70%;
+        top: 0;
         height: 100vh;
-        background: #1a202c;
-        flex-direction: column;
+        width: 70%;
+        background: #0d8a0d;
         padding: 60px 20px;
-        transition: 0.3s;
-    }
+        flex-direction: column;
+        gap: 20px;
+        transition: 0.3s;}
 
-    .nav-menu.active { right: 0; }
+    .nav-menu.active {right: 0;}
 
-    .search-container { flex-direction: column; }
+    .search-container {flex-direction: column;}
 
-    .btn-search, .btn-random { width: 100%; }
+    .btn-search,
+    .btn-random {width: 100%;}
 
-    .cocktails-grid { grid-template-columns: 1fr; }
+    .cocktails-grid {grid-template-columns: 1fr;}
+
+    .info-box {flex-direction: column;text-align: center;}
+
+    .info-box img {width: 70%;}
 }

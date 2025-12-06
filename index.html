@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EstiloCoctel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"  defer></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,7 +13,7 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <h1>🍹 EstiloCoctel</h1>
+                <h1>EstiloCoctel</h1>
                 
                 <!-- Botón hamburguesa (solo CSS y JS, sin Bootstrap) -->
                 <button class="hamburger" id="hamburger" aria-label="Menú">
@@ -34,6 +35,21 @@
 
     <!-- MAIN -->
     <main>
+        <!-- Sección informativa con imagen -->
+        <div class="info-box">
+            <div class="info-image">
+                <img src="img/coctelera.png" alt="Cócteles variados">
+            </div>
+
+            <div class="info-content">
+                <h3>Descubre el arte del cóctel</h3>
+                <p>
+                    Los cócteles son una mezcla de creatividad, aroma y color. 
+                    Encuentra tu bebida ideal, experimenta con nuevos sabores o 
+                    deja que el azar te sorprenda con algo único y refrescante.
+                </p>
+            </div>
+        </div>
         <div class="container">
             <!-- Sección de búsqueda -->
             <section class="search-section">
@@ -49,7 +65,7 @@
                     <button id="searchBtn" class="btn-search">Buscar</button>
                 </div>
 
-                <button id="randomBtn" class="btn-random">🎲🍀 Cóctel Aleatorio</button>
+                <button id="randomBtn" class="btn-random">! Cóctel Aleatorio ¡</button>
 
                 <!-- Alerta Bootstrap para errores -->
                 <div id="alertContainer"></div>
@@ -73,12 +89,10 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 CocktailDB - Proyecto Desarrollo Web</p>
-            <p class="footer-subtitle">IES El Majuelo - Ciclo Superior DAM</p>
+            <p>&copy; 2025  EstiloCoctel - Proyecto Desarrollo Web</p>
+            <p class="footer-subtitle">IES El Majuelo - Ángel López Ruiz</p>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/proyecto.js"></script>
 </body>
 </html>
